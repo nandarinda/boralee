@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이곳은 홈페이지 입니다</title>
+    <style>
+        body {
+            background-color: #eeccdd; /* 바뀐 배경색 */
+            color: green; /* 초록색 */
+            font-size: 13pt;
+            font-weight: bolder;
+            margin: 0;
+            padding: 0;
+            font-family: 'NanumMyeongjo','Myeongjo','NanumGothic', serif;
+            line-height: 1.4; /* 줄 간격 조정 */
+        }
+        p {
+            margin-bottom: 8px; /* 단락 아래 여백 조정 */
+        }
+        nav {
+            text-align: left; /* 왼쪽 정렬로 변경 */
+            margin-top: 20px;
+            margin-left: 20px; /* 왼쪽 여백 추가 */
+        }
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* 메뉴를 세로로 배치 */
+            margin-bottom: 5px; /* 메뉴 간격 조정 */
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            text-align: left; /* 내용을 왼쪽 정렬로 변경 */
+            margin: 0 auto; /* 가운데 정렬 취소 */
+            max-width: 600px; /* 최대 폭 설정 */
+            padding: 20px; /* 내용 주위에 여백 추가 */
+            margin-top: 50px;
+            margin-left: 20px; /* 왼쪽 여백 추가 */
+            display: none; /* 기본적으로 숨겨진 상태 */
+            font-weight: normal; /* 글자 스타일을 regular로 변경 */
+        }
+        /* 이미지를 왼쪽에 배치하는 스타일 */
+        .menu-image {
+            float: left; /* 왼쪽으로 배치 */
+            margin-right: 10px; /* 오른쪽 여백 추가 */
+            margin-top: 5px; /* 상단 여백 추가 */
+            width: 150px; /* 이미지 너비 조정 */
+            height: auto; /* 이미지 높이 자동 조정 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="goToHome()">홈</a>
+        <a href="#" onclick="showContent('projectContent')">증</a>
+        <a href="#" onclick="showContent('작Content')">작</a>
+        <a href="#" onclick="showContent('글Content')">글</a>
+        <a href="#" onclick="showContent('끈Content')">끈</a>
+        <a href="#" onclick="showContent('돌Content')">돌</a>
+    </nav>
+    <!-- 이미지 추가 -->
+    <img class="menu-image" id="menuImage" src="https://postfiles.pstatic.net/MjAyNDAzMDVfMTQ5/MDAxNzA5NTY2Nzg4MzAx.ew6CY7QJ_C8yW3hnDEkF7MQ1nIHwhwlZE8-z_uPYj9Ig.ZbN8Y_yMepB5qxePM-SkSNMkzTztsFvZLYJ6BWSHOy8g.PNG/i_draw2.png?type=w966" alt="메뉴 이미지">
+
+    <div class="content" id="projectContent">
+        <p>+project<br>
+        2019년 ></p>
+    </div>
+    <div class="content" id="작Content">
+        <p>일이삼사</p>
+    </div>
+    <div class="content" id="글Content">
+        <p>오육칠팔</p>
+    </div>
+    <div class="content" id="끈Content">
+        <p>구십</p>
+    </div>
+    <div class="content" id="돌Content">
+        <p>이십</p>
+    </div>
+    
+    <script>
+        // 이미지 숨기는 함수
+        function hideImage() {
+            var image = document.getElementById('menuImage');
+            image.style.display = 'none';
+        }
+        
+        // 이미지 보여주는 함수
+        function showImage() {
+            var image = document.getElementById('menuImage');
+            image.style.display = 'block';
+        }
+
+        // 컨텐츠 보여주는 함수
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+            hideImage(); // 컨텐츠가 표시될 때 이미지 숨기기
+        }
+
+        // 홈으로 이동하는 함수
+        function goToHome() {
+            showImage(); // 이미지 보이기
+            var contents = document.querySelectorAll('.content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none'; // 모든 컨텐츠 숨기기
+            }
+        }
+    </script>
+</body>
+</html>
